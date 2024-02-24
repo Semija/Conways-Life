@@ -77,10 +77,10 @@ public:
 		// Render update
 		{
 
-			DrawLine(CW1.PositionX - 2, CW1.PositionY - 2, (CW1.SizeX + CW1.PositionX), CW1.PositionY - 2,						CW1.Pause ? olc::RED: olc::GREEN);
-			DrawLine((CW1.SizeX + CW1.PositionX), CW1.PositionY - 2, (CW1.SizeX + CW1.PositionX), (CW1.SizeY + CW1.PositionY),	CW1.Pause ? olc::RED: olc::GREEN);
-			DrawLine((CW1.SizeX + CW1.PositionX), (CW1.SizeY + CW1.PositionY), CW1.PositionX - 2, (CW1.SizeY + CW1.PositionY),	CW1.Pause ? olc::RED: olc::GREEN);
-			DrawLine(CW1.PositionX - 2, (CW1.SizeY + CW1.PositionY), CW1.PositionX - 2, CW1.PositionY - 2,						CW1.Pause ? olc::RED: olc::GREEN);
+			DrawLine(CW1.PositionX - 2, CW1.PositionY - 2, (CW1.SizeX + CW1.PositionX), CW1.PositionY - 2,						CW1.Pause ? olc::RED: olc::WHITE);
+			DrawLine((CW1.SizeX + CW1.PositionX), CW1.PositionY - 2, (CW1.SizeX + CW1.PositionX), (CW1.SizeY + CW1.PositionY),	CW1.Pause ? olc::RED: olc::WHITE);
+			DrawLine((CW1.SizeX + CW1.PositionX), (CW1.SizeY + CW1.PositionY), CW1.PositionX - 2, (CW1.SizeY + CW1.PositionY),	CW1.Pause ? olc::RED: olc::WHITE);
+			DrawLine(CW1.PositionX - 2, (CW1.SizeY + CW1.PositionY), CW1.PositionX - 2, CW1.PositionY - 2,						CW1.Pause ? olc::RED: olc::WHITE);
 
 			for (int x = 0; x < CW1.SizeX/2; x ++)
 				for (int y = 0; y < CW1.SizeY/2; y ++) {
