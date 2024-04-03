@@ -1,10 +1,12 @@
-#define OLC_PGE_APPLICATION
-#include "olcPixelGameEngine.h"
-#include <ctime>
-#include "CellsWindow.h"
+#include "Source/Engine/olcPixelGameEngine.h"
+#include "Source/UI/CellsWindow.h"
 
-#define Width 100
-#define Height 100
+
+
+#define Window_Width 100
+#define Window_Height 100
+#define Pixel_Width 8
+#define Pixel_Height 8
 
 
 
@@ -16,11 +18,12 @@ public:
 		sAppName = "Conway's Game of Life";
 	}
 
-public:
+	// Called once at the start
 	bool OnUserCreate() {
 		return true;
 	}
 
+	// Called once per frame
 	bool OnUserUpdate(float fElapsedTime) {
 		Clear(olc::BLACK);
 
@@ -74,7 +77,7 @@ public:
 
 
 
-		// Render update
+		// Render update 
 		{
 
 			DrawLine(CW1.PositionX - 2, CW1.PositionY - 2, (CW1.SizeX + CW1.PositionX), CW1.PositionY - 2,						CW1.Pause ? olc::RED: olc::WHITE);
@@ -88,6 +91,8 @@ public:
 						Draw(x*2 + CW1.PositionX, y*2 + CW1.PositionY, olc::DARK_GREEN);
 				}
 
+
+			// Draw custom mouse cursor
 			if (CW1.IsMouseInside(MouseX, MouseY)) {
 			Draw(MouseX, MouseY, olc::GREEN);
 			}
@@ -104,7 +109,7 @@ public:
 
 int main() {
 	MainWindow demo;
-	if (demo.Construct(Width, Height, 7, 7))
+	if (demo.Construct(Window_Width, Window_Height, Pixel_Width, Pixel_Height))
 		demo.Start();
 
 	return 0;

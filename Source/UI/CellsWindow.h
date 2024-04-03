@@ -1,9 +1,9 @@
 #pragma once
-#include <ctime>
+#include "UIElement.h"
 
 
 
-class CellsWindow {
+class CellsWindow : public UIElement {
 public:
 	char** Cells;	 // 0  1  2  3  4  5  6  7  8
 	bool NtoLive[9] = { 0, 0, 0, 1, 0, 0, 0, 0, 0 };
@@ -23,7 +23,6 @@ public:
 	int Tick = 1;
 
 	CellsWindow() {
-
 		Cells = new char* [SizeX / 2];
 		for (int x = 0; x < SizeX / 2; x++) {
 			Cells[x] = new char[SizeY / 2];
