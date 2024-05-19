@@ -132,7 +132,7 @@ public:
 			std::cout << '\n';
 		}
 
-		//  Tick
+		// Tick
 		if (Window.GetKey(olc::Key::T).bPressed) {
 			std::cout << "-=-\n";
 			std::cout << "Tick was: " << Tick << '\n';
@@ -140,12 +140,13 @@ public:
 			std::cout << '\n';
 		}
 
-		/* if (Window.GetMouse(olc::Mouse::LEFT).bHeld && IsMouseOver()) {
+		// Drawing
+		if (Window.GetMouse(olc::Mouse::LEFT).bHeld && IsMouseOver()) {
 			olc::vi2d mousePos = Window.GetMousePos();
 			mousePos.x -= mousePos.x % 2;
 			mousePos.y -= mousePos.y % 2;
-			Cells[]
-		} */
+			Cells[(mousePos.x - x) / 2][(mousePos.y - y) / 2] = 1;
+		}
 
 	}
 
