@@ -156,9 +156,11 @@ public:
 
 	void Render () override {
 		// Draw custom mouse cursor
-		olc::vi2d mousePosition = Window.GetMousePos();
+		olc::vi2d mousePos = Window.GetMousePos();
+		mousePos.x -= mousePos.x % 2;
+		mousePos.y -= mousePos.y % 2;
 		if (IsMouseOver()) {
-			Window.Draw(mousePosition, olc::GREEN);
+			Window.Draw(mousePos, olc::GREEN);
 		}
 
 		// Borders
