@@ -9,6 +9,7 @@ public:
 	int width = 1, height = 1;	// Size in pixels
 
 	virtual void Render() {}
+	virtual void Update() {}
 
 	// Check if mouse position is incide size box
 	const bool IsMouseOver() const {
