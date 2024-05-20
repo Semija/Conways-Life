@@ -362,3 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /olcPixelGameEngine.h
+/Source/Engine/olcPixelGameEngine.h
+/Source/Engine/olcPixelGameEngine.cpp
