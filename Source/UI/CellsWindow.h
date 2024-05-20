@@ -3,14 +3,13 @@
 #include <ctime>
 
 
+
 enum CellState {
 	Dead		= 0,
 	Alive		= 1,
 	ReadyToDie	= 2,
 	ReadyToBorn	= 3
 };
-
-
 
 class CellsWindow : public UIElement {
 private:
@@ -24,11 +23,12 @@ public:				 // 0  1  2  3  4  5  6  7  8
 	int tickRate = 1;
 
 
-	CellsWindow() {
-		width = 80; // Should be divisible by 2
-		height = 80; // Should be divisible by 2
-		x = 10;
-		y = 10;
+
+	CellsWindow(int X, int Y, int Width, int Height) {
+		x = X;
+		y = Y;
+		width = Width; // Should be divisible by 2
+		height = Height; // Should be divisible by 2
 		Cells.resize(height/2, std::vector<CellState>(width/2, Dead));
 	}
 
@@ -145,10 +145,10 @@ public:				 // 0  1  2  3  4  5  6  7  8
 
 	void Render () override {
 		/*Borders*/ {
-			Window.DrawLine(x - 2, y - 2, x + width, y - 2, pause ? olc::RED : olc::WHITE);
-			Window.DrawLine(x + width, y - 2, x + width, y + height, pause ? olc::RED : olc::WHITE);
-			Window.DrawLine(x + width, y + height, x - 2, y + height, pause ? olc::RED : olc::WHITE);
-			Window.DrawLine(x - 2, y + height, x - 2, y - 2, pause ? olc::RED : olc::WHITE);
+			Window.DrawLine(x - 2,		y - 2,		x + width,	y - 2,		pause ? olc::RED : olc::WHITE);
+			Window.DrawLine(x + width,	y - 2,		x + width,	y + height, pause ? olc::RED : olc::WHITE);
+			Window.DrawLine(x + width,	y + height, x - 2,		y + height, pause ? olc::RED : olc::WHITE);
+			Window.DrawLine(x - 2,		y + height, x - 2,		y - 2,		pause ? olc::RED : olc::WHITE);
 
 			for (int i = 0; i < width / 2; i++)
 				for (int j = 0; j < height / 2; j++) {

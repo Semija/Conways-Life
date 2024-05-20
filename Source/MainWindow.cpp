@@ -3,7 +3,9 @@
 
 
 
-CellsWindow CW1;
+CellsWindow CW1(10, 10, 80, 80);
+
+
 
 MainWindow::MainWindow() {
 	sAppName = "Conway's Game of Life";
