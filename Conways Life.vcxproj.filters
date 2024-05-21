@@ -41,5 +41,8 @@
     <ClInclude Include="Source\UI\UIElement.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Source\UI\Button.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

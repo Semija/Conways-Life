@@ -14,9 +14,9 @@ enum CellState {
 class CellsWindow : public UIElement {
 private:
 	std::time_t dt = std::time(nullptr);
-public:				 // 0  1  2  3  4  5  6  7  8
-	bool NtoLive[9] = { 0, 0, 0, 1, 0, 0, 0, 0, 0 };
-	bool NtoDie[9]  = { 1, 1, 0, 0, 1, 1, 1, 1, 1 };
+public:						   // 0  1  2  3  4  5  6  7  8
+	std::vector<bool> NtoLive = { 0, 0, 0, 1, 0, 0, 0, 0, 0 };
+	std::vector<bool> NtoDie  = { 1, 1, 0, 0, 1, 1, 1, 1, 1 };
 	std::vector<std::vector<CellState>> Cells;	 
 	bool torMode = true;
 	bool pause = false;
@@ -29,7 +29,7 @@ public:				 // 0  1  2  3  4  5  6  7  8
 		y = Y;
 		width = Width; // Should be divisible by 2
 		height = Height; // Should be divisible by 2
-		Cells.resize(height/2, std::vector<CellState>(width/2, Dead));
+		Cells.resize((height/2), std::vector<CellState>((width/2), Dead));
 	}
 
 	void Logic() {
@@ -110,23 +110,6 @@ public:				 // 0  1  2  3  4  5  6  7  8
 				for (int y = 0; y < height / 2; y++) {
 					Cells[x][y] = Dead;
 				}
-		}
-
-		/*Rules*/
-		if (Window.GetKey(olc::Key::R).bPressed) {
-			std::cout << "-=-\n";
-
-			std::cout << "Enter new birth matrix: 0 1 2 3 4 5 6 7 8 \n";
-
-			std::cout << "Enter new birth matrix: ";
-			for (int x = 0; x < 9; x++) {
-				std::cin >> NtoLive[x];
-			}
-			std::cout << "Enter new death matrix:   ";
-			for (int x = 0; x < 9; x++) {
-				std::cin >> NtoDie[x];
-			}
-			std::cout << '\n';
 		}
 
 		/*Tick*/

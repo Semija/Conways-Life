@@ -14,8 +14,8 @@ public:
 	// Check if mouse position is incide size box
 	const bool IsMouseOver() const {
 		olc::vi2d mousePos = Window.GetMousePos();
-		return (mousePos.x >= x && mousePos.x <= x + width
-			&& mousePos.y >= y && mousePos.y <= y + height);
+		return (mousePos.x >= x && mousePos.x < x + width
+			 && mousePos.y >= y && mousePos.y < y + height);
 	}
 
 	static MainWindow& Window;
