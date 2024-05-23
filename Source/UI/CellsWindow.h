@@ -10,7 +10,7 @@ enum CellState {
 	ReadyToDie	= 2,
 	ReadyToBorn	= 3
 };
-
+	
 class CellsWindow : public UIElement {
 private:
 	std::time_t dt = std::time(nullptr);
@@ -34,7 +34,7 @@ public:						   // 0  1  2  3  4  5  6  7  8
 
 	void Logic() {
 		int neighborsCount = 0;
-
+			
 		// Logic
 		if ((std::time(nullptr) - dt) >= tickRate && !pause) {
 			dt = std::time(nullptr);
